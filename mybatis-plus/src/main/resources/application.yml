@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: mybatis-plus
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/test
+      username: root
+      password: 123456
+
+server:
+  port: 10000
+
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    # 开启下划线转驼峰
+    map-underscore-to-camel-case: true
+    # 日志实现
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    # 二级缓存开启
+    cache-enabled: true
+    # 一级缓存配置为 session 级别，简单理解就是开启一级缓存
+    local-cache-scope: session
+  # mapper.xml 位置
+  mapper-locations: classpath*:/top/wuhunyu.mybatis/plus/cache/mapper/**/*Mapper.xml
